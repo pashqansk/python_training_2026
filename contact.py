@@ -1,0 +1,43 @@
+class Contact:
+
+    def __init__(self,
+                 firstname,
+                 midname,
+                 lastname,
+                 nickname,
+                 title,
+                 workname,
+                 homeaddr,
+                 cityphone,
+                 mobilephone,
+                 workphone,
+                 email1,
+                 email2,
+                 email3,
+                 url,
+                 bday,
+                 bmonth,
+                 byear,
+                 aday,
+                 amonth,
+                 ayear):
+        self.firstname = firstname
+        self.midname = midname
+        self.lastname = lastname
+        self.nickname = nickname
+        self.title = title
+        self.workname = workname
+        self.homeaddr = homeaddr
+        self.cityphone = cityphone
+        self.mobilephone = mobilephone
+        self.workphone = workphone
+        self.email1 = email1
+        self.email2 = email2
+        self.email3 = email3
+        self.url = url
+        self.bday = bday
+        self.bmonth = bmonth
+        self.byear = byear
+        self.aday = aday
+        self.amonth = amonth
+        self.ayear = ayear
