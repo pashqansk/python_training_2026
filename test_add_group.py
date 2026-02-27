@@ -19,27 +19,20 @@ class TestAddGroup(unittest.TestCase):
 
     def test_add_group(self):
         wd = self.wd
-        self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
-        self.open_groups_page(wd)
         self.create_group(wd, Group(name="1345134534531t", header="qaegheryearhaerheasrseh", footer="asdhrehsdfhdhdrh"))
-        self.return_to_groups_page(wd)
         self.logout(wd)
 
 
     def test_add_empty_group(self):
         wd = self.wd
-        self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
-        self.open_groups_page(wd)
         self.create_group(wd, Group(name="", header="", footer=""))
-        self.return_to_groups_page(wd)
         self.logout(wd)
 
 
     def test_add_contact(self):
         wd = self.wd
-        self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
         self.create_new_contact(wd,Contact(
                                 firstname="Vasya",
@@ -62,7 +55,6 @@ class TestAddGroup(unittest.TestCase):
                                 aday="1",
                                 amonth="January",
                                 ayear="2025"))
-        self.push_home_button(wd)
         self.logout(wd)
 
     def push_home_button(self, wd: WebDriver):
@@ -130,6 +122,8 @@ class TestAddGroup(unittest.TestCase):
         wd.find_element_by_name("ayear").send_keys(contact.ayear)
         # submit contact creation
         wd.find_element_by_xpath("//div[@id='content']/form/input[19]").click()
+        self.push_home_button(wd)
+
 
     def logout(self, wd: WebDriver):
         wd.find_element_by_link_text("Logout").click()
@@ -138,6 +132,7 @@ class TestAddGroup(unittest.TestCase):
         wd.find_element_by_link_text("groups").click()
 
     def create_group(self, wd: WebDriver, group):
+        self.open_groups_page(wd)
         # init group creation
         wd.find_element_by_name("new").click()
         # fill group form
@@ -153,11 +148,14 @@ class TestAddGroup(unittest.TestCase):
         wd.find_element_by_name("group_footer").send_keys(group.footer)
         # submit group creation
         wd.find_element_by_name("submit").click()
+        self.return_to_groups_page(wd)
+
 
     def open_groups_page(self, wd: WebDriver):
         wd.find_element_by_link_text("groups").click()
 
     def login(self, wd: WebDriver, username, password):
+        self.open_home_page(wd)
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys(username)
