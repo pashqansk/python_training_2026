@@ -13,19 +13,19 @@ def app(request):
 
 
 def test_add_group(app):
-        app.login(username="admin", password="secret")
+        app.session.login(username="admin", password="secret")
         app.create_group(Group(name="1345134534531t", header="qaegheryearhaerheasrseh", footer="asdhrehsdfhdhdrh"))
-        app.logout()
+        app.session.logout()
 
 
 def test_add_empty_group(app):
-        app.login(username="admin", password="secret")
+        app.session.login(username="admin", password="secret")
         app.create_group(Group(name="", header="", footer=""))
-        app.logout()
+        app.session.logout()
 
 
 def test_add_contact(app):
-        app.login(username="admin", password="secret")
+        app.session.login(username="admin", password="secret")
         app.create_new_contact(Contact(
                                 firstname="Vasya",
                                 midname="Andreevich",
@@ -47,4 +47,4 @@ def test_add_contact(app):
                                 aday="1",
                                 amonth="January",
                                 ayear="2025"))
-        app.logout()
+        app.session.logout()
