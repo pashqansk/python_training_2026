@@ -1,66 +1,22 @@
-# -*- coding: utf-8 -*-
-import unittest
-from calendar import firstweekday
-
 from selenium import webdriver
-from selenium.common.exceptions import NoAlertPresentException
-from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support.ui import Select
-from group import Group
-from contact import Contact
 
 
+class Application:
 
-class TestAddGroup(unittest.TestCase):
-    def setUp(self):
+
+    def __init__(self):
         self.wd = webdriver.Firefox()
         self.wd.implicitly_wait(30)
 
-    def test_add_group(self):
+
+    def push_home_button(self):
         wd = self.wd
-        self.login(wd, username="admin", password="secret")
-        self.create_group(wd, Group(name="1345134534531t", header="qaegheryearhaerheasrseh", footer="asdhrehsdfhdhdrh"))
-        self.logout(wd)
-
-
-    def test_add_empty_group(self):
-        wd = self.wd
-        self.login(wd, username="admin", password="secret")
-        self.create_group(wd, Group(name="", header="", footer=""))
-        self.logout(wd)
-
-
-    def test_add_contact(self):
-        wd = self.wd
-        self.login(wd, username="admin", password="secret")
-        self.create_new_contact(wd,Contact(
-                                firstname="Vasya",
-                                midname="Andreevich",
-                                lastname="Pupkin",
-                                nickname="Kosoi",
-                                title="che tyt nado pisat",
-                                workname="kgb",
-                                homeaddr="Pushkina, 42",
-                                cityphone="2174545",
-                                mobilephone="79991112345",
-                                workphone="88005553535",
-                                email1="qwe@rty.io",
-                                email2="asd@fgh.jk",
-                                email3="zxc@vbn.mu",
-                                url="https://ya.ru",
-                                bday="1",
-                                bmonth="January",
-                                byear="1995",
-                                aday="1",
-                                amonth="January",
-                                ayear="2025"))
-        self.logout(wd)
-
-    def push_home_button(self, wd: WebDriver):
         wd.find_element_by_link_text("home").click()
 
-    def create_new_contact(self, wd: WebDriver, contact):
+
+    def create_new_contact(self, contact):
+        wd = self.wd
         # init contact creation
         wd.find_element_by_link_text("add new").click()
         # fill contact form
@@ -122,17 +78,22 @@ class TestAddGroup(unittest.TestCase):
         wd.find_element_by_name("ayear").send_keys(contact.ayear)
         # submit contact creation
         wd.find_element_by_xpath("//div[@id='content']/form/input[19]").click()
-        self.push_home_button(wd)
+        self.push_home_button()
 
 
-    def logout(self, wd: WebDriver):
+    def logout(self):
+        wd = self.wd
         wd.find_element_by_link_text("Logout").click()
 
-    def return_to_groups_page(self, wd: WebDriver):
+
+    def return_to_groups_page(self):
+        wd = self.wd
         wd.find_element_by_link_text("groups").click()
 
-    def create_group(self, wd: WebDriver, group):
-        self.open_groups_page(wd)
+
+    def create_group(self, group):
+        wd = self.wd
+        self.open_groups_page()
         # init group creation
         wd.find_element_by_name("new").click()
         # fill group form
@@ -148,14 +109,17 @@ class TestAddGroup(unittest.TestCase):
         wd.find_element_by_name("group_footer").send_keys(group.footer)
         # submit group creation
         wd.find_element_by_name("submit").click()
-        self.return_to_groups_page(wd)
+        self.return_to_groups_page()
 
 
-    def open_groups_page(self, wd: WebDriver):
+    def open_groups_page(self):
+        wd = self.wd
         wd.find_element_by_link_text("groups").click()
 
-    def login(self, wd: WebDriver, username, password):
-        self.open_home_page(wd)
+
+    def login(self, username, password):
+        wd = self.wd
+        self.open_home_page()
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys(username)
@@ -164,21 +128,11 @@ class TestAddGroup(unittest.TestCase):
         wd.find_element_by_name("pass").send_keys(password)
         wd.find_element_by_xpath("//input[@value='Login']").click()
 
-    def open_home_page(self, wd: WebDriver):
+
+    def open_home_page(self):
+        wd = self.wd
         wd.get("http://localhost/addressbook/")
 
-    def is_element_present(self, how, what):
-        try: self.wd.find_element(by=how, value=what)
-        except NoSuchElementException as e: return False
-        return True
-    
-    def is_alert_present(self):
-        try: self.wd.switch_to_alert()
-        except NoAlertPresentException as e: return False
-        return True
-    
-    def tearDown(self):
-        self.wd.quit()
 
-if __name__ == "__main__":
-    unittest.main()
+    def destroy(self):
+        self.wd.quit()
