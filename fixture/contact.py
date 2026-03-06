@@ -7,7 +7,8 @@ class ContactHelper:
 
     def open_contacts_page(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home").click()
+        if not len(wd.find_elements_by_name("Sort on “Last name”")) > 0 and len(wd.find_elements_by_name("new")) > 0:
+            wd.find_element_by_link_text("home").click()
 
 
     def change_field_value(self, field_name, text):
