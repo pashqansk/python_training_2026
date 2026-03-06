@@ -7,7 +7,8 @@ class ContactHelper:
 
     def open_contacts_page(self):
         wd = self.app.wd
-        if not len(wd.find_elements_by_name("Sort on “Last name”")) > 0 and len(wd.find_elements_by_name("new")) > 0:
+        # проверяю наличие кнопок-ориентиров: если их нет, то осуществляю переход на страницу списка контактов
+        if not len(wd.find_elements_by_name("Sort on “Last name”")) > 0 and len(wd.find_elements_by_xpath("//input[@value='Send e-Mail']")) > 0:
             wd.find_element_by_link_text("home").click()
 
 
