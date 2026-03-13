@@ -3,15 +3,15 @@ from model.contact import Contact
 
 
 def test_add_group(app):
-        app.group.create(Group(name="1345134534531t", header="qaegheryearhaerheasrseh", footer="asdhrehsdfhdhdrh"))
+        app.group.create_group(Group(name="1345134534531t", header="qaegheryearhaerheasrseh", footer="asdhrehsdfhdhdrh"))
 
 
 def test_add_empty_group(app):
-        app.group.create(Group())
+        app.group.create_group(Group())
 
 
 def test_add_contact(app):
-        app.contact.create(Contact(
+        app.contact.create_contact(Contact(
             firstname="Vasya",
             midname="Andreevich",
             lastname="Pupkin",

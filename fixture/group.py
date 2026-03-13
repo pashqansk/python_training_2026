@@ -6,7 +6,7 @@ class GroupHelper:
     def open_groups_page(self):
         wd = self.app.wd
         # проверяю нужный url и кнопки-ориентира: если их нет, то осуществляю переход на страницу списка групп
-        if not wd.current_url.endswith("/group.php") and len(wd.find_elements_by_name("new")) > 0:
+        if not (wd.current_url.endswith("/group.php") and len(wd.find_elements_by_name("new")) > 0):
             wd.find_element_by_link_text("groups").click()
 
 
@@ -30,7 +30,7 @@ class GroupHelper:
         self.change_field_value("group_footer", group.footer)
 
 
-    def create(self, group):
+    def create_group(self, group):
         wd = self.app.wd
         self.open_groups_page()
         # init group creation

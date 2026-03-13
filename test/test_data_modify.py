@@ -4,11 +4,11 @@ from model.contact import Contact
 
 def test_modify_first_group_name(app):
     if app.group.count() == 0:
-        app.group.create(Group(name="test"))
+        app.group.create_group(Group(name="test"))
     app.group.modify_first_group(Group(name="new_group_name"))
 
 
 def test_modify_first_contact_name(app):
     if app.contact.count() == 0:
-        app.contact.create(Contact(firstname="test"))
+        app.contact.create_contact(Contact(firstname="test"))
     app.contact.modify_first_contact(Contact(firstname="new_firstname"))

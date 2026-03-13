@@ -8,7 +8,7 @@ class ContactHelper:
     def open_contacts_page(self):
         wd = self.app.wd
         # проверяю наличие кнопок-ориентиров: если их нет, то осуществляю переход на страницу списка контактов
-        if not len(wd.find_elements_by_name("Sort on “Last name”")) > 0 and len(wd.find_elements_by_xpath("//input[@value='Send e-Mail']")) > 0:
+        if not (len(wd.find_elements_by_name("Sort on “Last name”")) > 0 and len(wd.find_elements_by_xpath("//input[@value='Send e-Mail']")) > 0):
             wd.find_element_by_link_text("home").click()
 
 
@@ -52,7 +52,7 @@ class ContactHelper:
         self.change_field_value("ayear", contact.ayear)
 
 
-    def create(self, contact):
+    def create_contact(self, contact):
         wd = self.app.wd
         # init contact creation
         self.open_contacts_page()
