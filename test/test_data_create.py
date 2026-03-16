@@ -3,11 +3,17 @@ from model.contact import Contact
 
 
 def test_add_group(app):
+        old_groups = app.group.get_group_list()
         app.group.create_group(Group(name="1345134534531t", header="qaegheryearhaerheasrseh", footer="asdhrehsdfhdhdrh"))
+        new_groups = app.group.get_group_list()
+        assert len(old_groups) + 1 == len(new_groups)
 
 
 def test_add_empty_group(app):
+        old_groups = app.group.get_group_list()
         app.group.create_group(Group())
+        new_groups = app.group.get_group_list()
+        assert len(old_groups) + 1 == len(new_groups)
 
 
 def test_add_contact(app):
