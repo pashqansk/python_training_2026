@@ -1,5 +1,4 @@
 from selenium.webdriver.support.ui import Select
-
 from model.contact import Contact
 
 
@@ -78,7 +77,6 @@ class ContactHelper:
         self.open_contacts_page()
 
 
-
     def delete_first_contact(self):
         wd = self.app.wd
         self.open_contacts_page()
@@ -93,12 +91,19 @@ class ContactHelper:
         self.open_contacts_page()
         return len(wd.find_elements_by_name("selected[]"))
 
+
     def get_contact_list(self):
         wd = self.app.wd
         self.open_contacts_page()
+        # формируем список контактов
         contacts = []
-        for element in wd.find_elements_by_name("entry"):
-            text = element.text
-            id = element.find_element_by_name("selected[]").get_attribute("value")
-            contacts.append(Contact(firstname=text, id=id))
+        # находим строки контактов
+        rows = wd.find_elements_by_name("entry")
+        # Из строк выделяем id имя фамилию контакта затем добавляем их в список
+        for row in rows:
+            id = row.find_element_by_name("selected[]").get_attribute("value")
+            cells = row.find_elements_by_tag_name("td")
+            firstname = cells[2].text
+            lastname = cells[1].text
+            contacts.append(Contact(firstname=firstname, lastname=lastname, id=id))
         return contacts

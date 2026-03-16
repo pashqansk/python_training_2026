@@ -26,8 +26,14 @@ def test_modify_first_group_name(app):
 
 def test_modify_first_contact_name(app):
     if app.contact.count() == 0:
-        app.contact.create_contact(Contact(firstname="test"))
+        app.contact.create_contact(Contact(firstname="test-Fname",lastname="test-Lname"))
     old_contacts = app.contact.get_contact_list()
-    app.contact.modify_first_contact(Contact(firstname="new_firstname"))
+    contact = Contact(
+        firstname="new_firstname",
+        lastname="new_lastname")
+    contact.id = old_contacts[0].id
+    app.contact.modify_first_contact(contact)
     new_contacts = app.contact.get_contact_list()
     assert len(old_contacts) == len(new_contacts)
+    old_contacts[0] = contact
+    assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
