@@ -21,3 +21,7 @@ def test_delete_first_contact(app):
     app.contact.delete_first_contact()
     new_contacts = app.contact.get_contact_list()
     assert len(old_contacts) - 1 == len(new_contacts)
+    # вырезаем первый контакт из списка контактов
+    old_contacts [0:1] = []
+    # сравниваем старый список контактов с актуальным списком контактов после удаления контакта
+    assert old_contacts == new_contacts

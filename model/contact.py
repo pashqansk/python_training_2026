@@ -43,3 +43,11 @@ class Contact:
         self.amonth = amonth
         self.ayear = ayear
         self.id = id
+
+    # отображение объекта в консоли ид:Имя-Фамилия
+    def __repr__(self):
+        return "%s:%s-%s" % (self.id, self.firstname, self.lastname)
+
+    # сравниваем объекты списка контактов по id имени и фамилии
+    def __eq__(self, other):
+        return (self.id is None or other.id is None or self.id == other.id) and self.firstname == other.firstname and self.lastname == other.lastname
