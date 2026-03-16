@@ -8,6 +8,10 @@ def test_delete_first_group(app):
     app.group.delete_first_group()
     new_groups = app.group.get_group_list()
     assert len(old_groups) - 1 == len(new_groups)
+    # из списка групп вырезаем 1 группу
+    old_groups [0:1] = []
+    # сравниваем объекты списка группы
+    assert old_groups == new_groups
 
 
 def test_delete_first_contact(app):
