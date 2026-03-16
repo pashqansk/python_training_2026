@@ -25,6 +25,7 @@ def test_add_empty_group(app):
 
 
 def test_add_contact(app):
+        old_contacts = app.contact.get_contact_list()
         app.contact.create_contact(Contact(
             firstname="Vasya",
             midname="Andreevich",
@@ -46,3 +47,5 @@ def test_add_contact(app):
             aday="1",
             amonth="January",
             ayear="2025"))
+        new_contacts = app.contact.get_contact_list()
+        assert len(old_contacts) + 1 == len(new_contacts)

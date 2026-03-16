@@ -20,7 +20,8 @@ class Contact:
                  byear = None,
                  aday = "1",
                  amonth = "January",
-                 ayear = None):
+                 ayear = None,
+                 id = None):
         self.firstname = firstname
         self.midname = midname
         self.lastname = lastname
@@ -41,3 +42,4 @@ class Contact:
         self.aday = aday
         self.amonth = amonth
         self.ayear = ayear
+        self.id = id
