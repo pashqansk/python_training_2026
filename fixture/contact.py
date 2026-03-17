@@ -63,6 +63,8 @@ class ContactHelper:
         # submit contact creation
         wd.find_element_by_xpath("//div[@id='content']/form/input[19]").click()
         self.open_contacts_page()
+        # сброс кэша после совершенных с ним операций
+        self.contact_cache = None
 
 
     def modify_first_contact(self, new_contact_data):
@@ -75,6 +77,8 @@ class ContactHelper:
         # submit contact edition
         wd.find_element_by_name("update").click()
         self.open_contacts_page()
+        # сброс кэша после совершенных с ним операций
+        self.contact_cache = None
 
 
     def delete_first_contact(self):
@@ -84,6 +88,8 @@ class ContactHelper:
         # submit deletion
         wd.find_element_by_name("delete").click()
         self.open_contacts_page()
+        # сброс кэша после совершенных с ним операций
+        self.contact_cache = None
 
 
     def count(self):
@@ -92,18 +98,24 @@ class ContactHelper:
         return len(wd.find_elements_by_name("selected[]"))
 
 
+    contact_cache = None
+
+
     def get_contact_list(self):
-        wd = self.app.wd
-        self.open_contacts_page()
-        # формируем список контактов
-        contacts = []
-        # находим строки контактов
-        rows = wd.find_elements_by_name("entry")
-        # Из строк выделяем id имя фамилию контакта затем добавляем их в список
-        for row in rows:
-            id = row.find_element_by_name("selected[]").get_attribute("value")
-            cells = row.find_elements_by_tag_name("td")
-            firstname = cells[2].text
-            lastname = cells[1].text
-            contacts.append(Contact(firstname=firstname, lastname=lastname, id=id))
-        return contacts
+        # если кэш пустой, то формируем его загружая информацию из браузера
+        if self.contact_cache is None:
+            wd = self.app.wd
+            self.open_contacts_page()
+            # формируем список контактов
+            self.contact_cache = []
+            # находим строки контактов
+            rows = wd.find_elements_by_name("entry")
+            # Из строк выделяем id имя фамилию контакта затем добавляем их в список
+            for row in rows:
+                id = row.find_element_by_name("selected[]").get_attribute("value")
+                cells = row.find_elements_by_tag_name("td")
+                firstname = cells[2].text
+                lastname = cells[1].text
+                self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id))
+        # в тестах работаем не с самим кэшем, а с его копией
+        return list(self.contact_cache)
