@@ -71,19 +71,22 @@ class ContactHelper:
         # сброс кэша после совершенных с ним операций
         self.contact_cache = None
 
-# !!!!! HERE !!!!!!!!
-    def modify_first_contact(self, new_contact_data):
+
+    def modify_contact_by_index(self, index, new_contact_data):
         wd = self.app.wd
         self.open_contacts_page()
-        self.select_first_contact()
-        # open modification form
-        wd.find_element_by_xpath("//img[@alt='Edit']").click()
+        # редактируем выбранный по индексу элемент (карандашик, а не чекбокс на UI, Карл!)
+        wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
         self.fill_contact_form(new_contact_data)
         # submit contact edition
         wd.find_element_by_name("update").click()
         self.open_contacts_page()
         # сброс кэша после совершенных с ним операций
         self.contact_cache = None
+
+
+    def modify_first_contact(self):
+        self.modify_contact_by_index(0, Contact(firstname="test"))
 
 
     def delete_contact_by_index(self, index):
@@ -119,8 +122,8 @@ class ContactHelper:
             rows = wd.find_elements_by_name("entry")
             # Из строк выделяем id имя фамилию контакта затем добавляем их в список
             for row in rows:
-                id = row.find_element_by_name("selected[]").get_attribute("value")
                 cells = row.find_elements_by_tag_name("td")
+                id = cells[0].find_element_by_tag_name("input").get_attribute("id")
                 firstname = cells[2].text
                 lastname = cells[1].text
                 self.contact_cache.append(Contact(firstname=firstname, lastname=lastname, id=id))
