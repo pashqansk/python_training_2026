@@ -42,6 +42,8 @@ class GroupHelper:
         # submit group creation
         wd.find_element_by_name("submit").click()
         self.open_groups_page()
+        # сброс кэша после совершенных с ним операций
+        self.group_cache = None
 
 
     def modify_first_group(self, new_group_data):
@@ -54,6 +56,8 @@ class GroupHelper:
         # submit group edition
         wd.find_element_by_name("update").click()
         self.open_groups_page()
+        # сброс кэша после совершенных с ним операций
+        self.group_cache = None
 
 
     def delete_first_group(self):
@@ -63,6 +67,8 @@ class GroupHelper:
         # submit deletion
         wd.find_element_by_name("delete").click()
         self.open_groups_page()
+        # сброс кэша после совершенных с ним операций
+        self.group_cache = None
 
 
     def count(self):
@@ -71,14 +77,20 @@ class GroupHelper:
         return len (wd.find_elements_by_name("selected[]"))
 
 
+    group_cache = None
+
+
     def get_group_list(self):
-        wd = self.app.wd
-        self.open_groups_page()
-        groups = []
-        # для каждого элемента входящего в "группы" находим имя и id
-        for element in wd.find_elements_by_css_selector("span.group"):
-            text = element.text
-            id = element.find_element_by_name("selected[]").get_attribute("value")
-            # создаем объект типа Group и добавляем его в список
-            groups.append(Group(name=text, id=id))
-        return groups
+        # если кэш пустой, то формируем его загружая информацию из браузера
+        if self.group_cache is None:
+            wd = self.app.wd
+            self.open_groups_page()
+            self.group_cache = []
+            # для каждого элемента входящего в "группы" находим имя и id
+            for element in wd.find_elements_by_css_selector("span.group"):
+                text = element.text
+                id = element.find_element_by_name("selected[]").get_attribute("value")
+                # создаем объект типа Group и добавляем его в список
+                self.group_cache.append(Group(name=text, id=id))
+        # в тестах работаем не с самим кэшем, а с его копией
+        return list(self.group_cache)
