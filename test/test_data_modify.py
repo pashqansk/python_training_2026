@@ -15,6 +15,7 @@ def test_modify_first_group_name(app):
     assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
 
 
+# Этот тест будет удален после использования параметризованных тестов
 '''def test_modify_first_group_header(app):
     if app.group.count() == 0:
         app.group.create_group(Group(name="test"))
