@@ -27,6 +27,11 @@ class ContactHelper:
         wd.find_element_by_name("selected[]").click()
 
 
+    def select_contact_by_index(self, index):
+        wd = self.app.wd
+        wd.find_elements_by_name("selected[]")[index].click()
+
+
     def fill_contact_form(self, contact):
         wd = self.app.wd
         self.change_field_value("firstname", contact.firstname)
@@ -66,7 +71,7 @@ class ContactHelper:
         # сброс кэша после совершенных с ним операций
         self.contact_cache = None
 
-
+# !!!!! HERE !!!!!!!!
     def modify_first_contact(self, new_contact_data):
         wd = self.app.wd
         self.open_contacts_page()
@@ -81,16 +86,18 @@ class ContactHelper:
         self.contact_cache = None
 
 
-    def delete_first_contact(self):
+    def delete_contact_by_index(self, index):
         wd = self.app.wd
         self.open_contacts_page()
-        self.select_first_contact()
+        self.select_contact_by_index(index)
         # submit deletion
         wd.find_element_by_name("delete").click()
         self.open_contacts_page()
         # сброс кэша после совершенных с ним операций
         self.contact_cache = None
 
+    def delete_first_contact(self):
+        self.delete_contact_by_index(0)
 
     def count(self):
         wd = self.app.wd
