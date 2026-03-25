@@ -38,7 +38,7 @@ def test_add_contact(app):
             title="che tyt nado pisat",
             workname="kgb",
             homeaddr="Pushkina, 42",
-            cityphone="2174545",
+            homephone="2174545",
             mobilephone="79991112345",
             workphone="88005553535",
             email1="qwe@rty.io",
