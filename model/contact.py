@@ -25,7 +25,9 @@ class Contact:
                  amonth = "January",
                  ayear = None,
                  id = None,
-                 all_phones_from_home_page= None):
+                 all_phones_from_home_page= None,
+                 all_emails_from_home_page = None
+                 ):
         self.firstname = firstname
         self.midname = midname
         self.lastname = lastname
@@ -48,6 +50,7 @@ class Contact:
         self.ayear = ayear
         self.id = id
         self.all_phones_from_home_page = all_phones_from_home_page
+        self.all_emails_from_home_page = all_emails_from_home_page
 
 
     # отображение объекта в консоли ид:Имя-Фамилия
