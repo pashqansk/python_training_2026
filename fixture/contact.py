@@ -42,7 +42,7 @@ class ContactHelper:
         self.change_field_value("title", contact.title)
         self.change_field_value("company", contact.workname)
         self.change_field_value("address", contact.homeaddr)
-        self.change_field_value("home", contact.cityphone)
+        self.change_field_value("home", contact.homephone)
         self.change_field_value("mobile", contact.mobilephone)
         self.change_field_value("work", contact.workphone)
         self.change_field_value("email", contact.email1)
