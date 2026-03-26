@@ -12,7 +12,7 @@ class Group:
 
     # как будет отображаться объект в консоли
     def __repr__(self):
-        return "%s:%s" % (self.id, self.name)
+        return "%s:%s;%s;%s" % (self.id, self.name, self.header, self.footer)
 
 
     # сравниваем объекты групп по id и имени

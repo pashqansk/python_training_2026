@@ -55,7 +55,7 @@ class Contact:
 
     # отображение объекта в консоли ид:Имя-Фамилия
     def __repr__(self):
-        return "%s:%s %s" % (self.id, self.firstname, self.lastname)
+        return "%s:%s;%s;%s" % (self.id, self.firstname, self.lastname, self.homeaddr)
 
 
     # сравниваем объекты списка контактов по id имени и фамилии
