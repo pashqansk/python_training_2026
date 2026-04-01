@@ -1,4 +1,3 @@
-from string import punctuation
 from model.group import Group
 from model.contact import Contact
 import pytest

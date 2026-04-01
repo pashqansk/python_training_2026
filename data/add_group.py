@@ -1,4 +1,3 @@
-from string import punctuation
 from model.group import Group
 import random
 import string

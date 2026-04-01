@@ -1,30 +1,31 @@
 from model.contact import Contact
 import random
 import string
+import os.path
+import json
+import getopt
+import sys
 
 
-contact_const = [
-    Contact(firstname="fname1",
-            midname="midname1",
-            lastname="lastname1",
-            nickname="nickname1",
-            title="title1",
-            workname="workname1",
-            homeaddr="homeaddr1",
-            homephone="homephone1",
-            mobilephone="mobilephone1",
-            workphone="workphone1",
-            email1="email1",
-            email2="email2",
-            email3="email3",
-            url="url1",
-            bday="1",
-            bmonth="January",
-            byear="1995",
-            aday="1",
-            amonth="January",
-            ayear="2025")
-]
+try:
+    opts, args = getopt.getopt(sys.argv[1:], "n:f:", ["number of groups", "file"])
+except getopt.GetoptError as err:
+    getopt.usage()
+    sys.exit(2)
+
+
+# параметры ниже можно менять с помощью изменения конфигурации в секции Script parameters, пример -n 10 -f data/test.json
+# количество сгенерированных контактов
+n = 5
+# имя файла со сгенерированными данными
+f = "data/contact.json"
+
+
+for o, a in opts:
+    if o == "-n":
+        n = int(a)
+    elif o == "-f":
+        f = a
 
 
 def random_string(prefix, maxlen):
@@ -56,3 +57,9 @@ contact_testdata = [Contact(firstname="", lastname="")] + [
             )
     for n in range(5)
 ]
+
+
+file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", f)
+
+with open(file, "w") as out:
+    out.write(json.dumps(contact_testdata, default=lambda x: x.__dict__, indent=2))
