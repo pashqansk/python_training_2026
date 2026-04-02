@@ -18,7 +18,7 @@ except getopt.GetoptError as err:
 # количество сгенерированных контактов
 n = 5
 # имя файла со сгенерированными данными
-f = "data/contact.json"
+f = "data/contacts.json"
 
 
 for o, a in opts:
