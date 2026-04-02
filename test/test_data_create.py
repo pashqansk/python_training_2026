@@ -2,9 +2,9 @@ from model.group import Group
 from model.contact import Contact
 
 
-def test_add_group(app, data_groups):
+def test_add_group(app, json_groups):
         old_groups = app.group.get_group_list()
-        group = data_groups
+        group = json_groups
         app.group.create_group(group)
         # проверяем что новая группа добавлена. сверяется длина старого списка с общим количеством групп
         # count() выступает в качестве хэша
@@ -16,8 +16,8 @@ def test_add_group(app, data_groups):
         assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
 
 
-def test_add_contact(app, data_contacts):
-        contact = data_contacts
+def test_add_contact(app, json_contacts):
+        contact = json_contacts
         old_contacts = app.contact.get_contact_list()
         app.contact.create_contact(contact)
         # сюда тоже сверку с хэшем можно прикрутить, т.к. метод уже существует
