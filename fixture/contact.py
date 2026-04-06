@@ -166,12 +166,14 @@ class ContactHelper:
                 id = cells[0].find_element_by_tag_name("input").get_attribute("id")
                 firstname = cells[2].text
                 lastname = cells[1].text
+                address = cells[3].text
             #определяем содержимое ячейки с телефонами и разделяем её на части (разделитель - перевод строки) затем добавляем их в список
                 all_phones = cells[5].text
                 all_emails = cells[4].text
                 self.contact_cache.append(Contact(
                     firstname=firstname,
                     lastname=lastname,
+                    address=address,
                     id=id,
                     all_phones_from_home_page = all_phones,
                     all_emails_from_home_page = all_emails

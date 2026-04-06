@@ -1,6 +1,6 @@
 import re
 from random import randrange
-
+from model.contact import Contact
 
 def test_assert_random_credentials_on_home_page(app):
     contacts = app.contact.get_contact_list()
@@ -12,6 +12,16 @@ def test_assert_random_credentials_on_home_page(app):
     assert contact_from_edit_page.address == contact_from_edit_page.address
     assert contact_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(contact_from_edit_page)
     assert contact_from_home_page.all_emails_from_home_page == merge_emails_like_on_home_page(contact_from_edit_page)
+
+
+def test_assert_all_credentials_on_home_page(app, db):
+    if len(db.get_contact_list()) == 0:
+        app.contact.create_contact(Contact(firstname="test"))
+    contacts_ui = app.contact.get_contact_list()
+    contacts_db = db.get_home_page_list()
+    assert len(contacts_ui) == len(contacts_db)
+    assert sorted(contacts_ui, key=Contact.id_or_max) == sorted(contacts_db, key=Contact.id_or_max)
+
 
 # TODO с ним надо что-то придумать, т.к. зависим от данных, которые могут обмануть паттерн в регулярке
 # TODO потом перенести в другой тестовый файл, работающий с view page
