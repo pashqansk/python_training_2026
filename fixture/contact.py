@@ -38,6 +38,18 @@ class ContactHelper:
         wd.find_element_by_css_selector("input[value='%s']" % id).click()
 
 
+    def edit_contact_by_index(self, index):
+        wd = self.app.wd
+        # редактируем выбранный по индексу элемент (карандашик, а не чекбокс на UI, Карл!)
+        wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
+
+
+    def edit_contact_by_id(self, id):
+        wd = self.app.wd
+        # ID карандашика, а не чекбокса
+        wd.find_element_by_xpath('//a[contains(@href, "edit.php?id=%s")]' % id).click()
+
+
     def fill_contact_form(self, contact):
         wd = self.app.wd
         self.change_field_value("firstname", contact.firstname)
@@ -81,8 +93,19 @@ class ContactHelper:
     def modify_contact_by_index(self, index, new_contact_data):
         wd = self.app.wd
         self.open_contacts_page()
-        # редактируем выбранный по индексу элемент (карандашик, а не чекбокс на UI, Карл!)
-        wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
+        self.edit_contact_by_index(index)
+        self.fill_contact_form(new_contact_data)
+        # submit contact edition
+        wd.find_element_by_name("update").click()
+        self.open_contacts_page()
+        # сброс кэша после совершенных с ним операций
+        self.contact_cache = None
+
+
+    def modify_contact_by_id(self, id, new_contact_data):
+        wd = self.app.wd
+        self.open_contacts_page()
+        self.edit_contact_by_id(id)
         self.fill_contact_form(new_contact_data)
         # submit contact edition
         wd.find_element_by_name("update").click()
