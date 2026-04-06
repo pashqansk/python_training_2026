@@ -49,10 +49,10 @@ finally:
     pass #db.destroy()
 
 
-'''try:
-    l = db.get_contacts_not_in_group(Group(id="394"))
+try:
+    l = db.get_contacts_not_in_group(Group(id="11"))
     for item in l:
         print(item)
     print(len(l))
 finally:
-    pass #db.destroy()'''
+    pass #db.destroy()
