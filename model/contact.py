@@ -5,19 +5,19 @@ class Contact:
 
     def __init__(self,
                  firstname = None,
-                 midname = None,
+                 middlename = None,
                  lastname = None,
                  nickname = None,
                  title = None,
-                 workname = None,
-                 homeaddr = None,
-                 homephone = None,
-                 mobilephone = None,
-                 workphone = None,
-                 email1 = None,
+                 company = None,
+                 address = None,
+                 home = None,
+                 mobile = None,
+                 work = None,
+                 email = None,
                  email2 = None,
                  email3 = None,
-                 url = None,
+                 homepage = None,
                  bday = "1",
                  bmonth = "January",
                  byear = None,
@@ -29,19 +29,19 @@ class Contact:
                  all_emails_from_home_page = None
                  ):
         self.firstname = firstname
-        self.midname = midname
+        self.middlename = middlename
         self.lastname = lastname
         self.nickname = nickname
         self.title = title
-        self.workname = workname
-        self.homeaddr = homeaddr
-        self.homephone = homephone
-        self.mobilephone = mobilephone
-        self.workphone = workphone
-        self.email1 = email1
+        self.company = company
+        self.address = address
+        self.home = home
+        self.mobile = mobile
+        self.work = work
+        self.email = email
         self.email2 = email2
         self.email3 = email3
-        self.url = url
+        self.homepage = homepage
         self.bday = bday
         self.bmonth = bmonth
         self.byear = byear
@@ -55,7 +55,7 @@ class Contact:
 
     # отображение объекта в консоли ид:Имя-Фамилия
     def __repr__(self):
-        return "%s:%s;%s;%s" % (self.id, self.firstname, self.lastname, self.homeaddr)
+        return "%s:%s;%s;%s" % (self.id, self.firstname, self.lastname, self.address)
 
 
     # сравниваем объекты списка контактов по id имени и фамилии

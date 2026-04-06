@@ -36,19 +36,19 @@ class ContactHelper:
     def fill_contact_form(self, contact):
         wd = self.app.wd
         self.change_field_value("firstname", contact.firstname)
-        self.change_field_value("middlename", contact.midname)
+        self.change_field_value("middlename", contact.middlename)
         self.change_field_value("lastname", contact.lastname)
         self.change_field_value("nickname", contact.nickname)
         self.change_field_value("title", contact.title)
-        self.change_field_value("company", contact.workname)
-        self.change_field_value("address", contact.homeaddr)
-        self.change_field_value("home", contact.homephone)
-        self.change_field_value("mobile", contact.mobilephone)
-        self.change_field_value("work", contact.workphone)
-        self.change_field_value("email", contact.email1)
+        self.change_field_value("company", contact.company)
+        self.change_field_value("address", contact.address)
+        self.change_field_value("home", contact.home)
+        self.change_field_value("mobile", contact.mobile)
+        self.change_field_value("work", contact.work)
+        self.change_field_value("email", contact.email)
         self.change_field_value("email2", contact.email2)
         self.change_field_value("email3", contact.email3)
-        self.change_field_value("homepage", contact.url)
+        self.change_field_value("homepage", contact.homepage)
         wd.find_element_by_name("bday").click()
         Select(wd.find_element_by_name("bday")).select_by_visible_text(contact.bday)
         wd.find_element_by_name("bmonth").click()
@@ -175,11 +175,11 @@ class ContactHelper:
             firstname=firstname,
             lastname=lastname,
             id=id,
-            homeaddr=homeaddr,
-            homephone=homephone,
-            mobilephone=mobilephone,
-            workphone=workphone,
-            email1=email1,
+            address=homeaddr,
+            home=homephone,
+            mobile=mobilephone,
+            work=workphone,
+            email=email1,
             email2=email2,
             email3=email3
         )
@@ -193,7 +193,7 @@ class ContactHelper:
         mobilephone = re.search("M: (.*)", text).group(1)
         workphone = re.search("W: (.*)", text).group(1)
         return Contact(
-            homephone=homephone,
-            mobilephone=mobilephone,
-            workphone=workphone
+            home=homephone,
+            mobile=mobilephone,
+            work=workphone
         )
