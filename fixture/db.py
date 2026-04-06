@@ -29,7 +29,7 @@ class DbFixture:
         list = []
         cursor = self.connection.cursor()
         try:
-            cursor.execute("select id, firstname, middlename, lastname, nickname, company, title, address, home, mobile, work, email, email2, email3, homepage, bday, bmonth, byear, aday, amonth, ayear from addressbook")
+            cursor.execute("select id, firstname, middlename, lastname, nickname, company, title, address, home, mobile, work, email, email2, email3, homepage, bday, bmonth, byear, aday, amonth, ayear from addressbook where deprecated is Null")
             for row in cursor:
                 (id, firstname, middlename, lastname, nickname, company, title, address, home, mobile, work, email, email2, email3, homepage, bday, bmonth, byear, aday, amonth, ayear) = row
                 list.append(Contact(id=str(id),
