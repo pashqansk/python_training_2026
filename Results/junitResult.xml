@@ -1,0 +1,465 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<result plugin="junit@1403.vd9d1413fd205">
+  <suites>
+    <suite>
+      <file>C:\Users\timoshenko.SP\.jenkins\workspace\addressbook tests\results.xml</file>
+      <name>pytest</name>
+      <duration>60.743</duration>
+      <startTime>1777273234175</startTime>
+      <properties/>
+      <timestamp>2026-04-27T14:00:34.175818+07:00</timestamp>
+      <time>60.743</time>
+      <enclosingBlocks/>
+      <enclosingBlockNames/>
+      <cases>
+        <case>
+          <duration>7.109</duration>
+          <startTime>1777273234175</startTime>
+          <className>test.test_contact_in_group</className>
+          <testName>test_add_contact_to_group_new</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.109</duration>
+          <startTime>1777273241284</startTime>
+          <className>test.test_contact_in_group</className>
+          <testName>test_remove_contact_from_group_new</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.348</duration>
+          <startTime>1777273242393</startTime>
+          <className>test.test_data_create</className>
+          <testName>test_add_group[None:;;]</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.195</duration>
+          <startTime>1777273243741</startTime>
+          <className>test.test_data_create</className>
+          <testName>test_add_group[None:N***EF);H***;F***&gt;7]</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.152</duration>
+          <startTime>1777273244936</startTime>
+          <className>test.test_data_create</className>
+          <testName>test_add_group[None:N*** c+OS*;H***f_&gt;eprg;F***]</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.207</duration>
+          <startTime>1777273246088</startTime>
+          <className>test.test_data_create</className>
+          <testName>test_add_group[None:N***:;H***;F***Q?XP %$?7&quot;Uto]</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.313</duration>
+          <startTime>1777273247295</startTime>
+          <className>test.test_data_create</className>
+          <testName>test_add_group[None:N***];H***Is&quot;MMB{zmf8;F***er$`?,.  )Q9 zxu]</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.125</duration>
+          <startTime>1777273248608</startTime>
+          <className>test.test_data_create</className>
+          <testName>test_add_group[None:N***3&lt;S{L;H***]&amp; KmA?t(c{O9;F*** ^pXfBrBjm) d]</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <errorStackTrace>app = &lt;fixture.application.Application object at 0x0000022FCF24D730&gt;
+db = &lt;fixture.db.DbFixture object at 0x0000022FCFBDBA60&gt;
+json_groups = None:N***3&lt;S{L;H***]&amp; KmA?t(c{O9;F*** ^pXfBrBjm) d
+check_ui = False
+
+    def test_add_group(app, db, json_groups, check_ui):
+            group = json_groups
+            old_groups = db.get_group_list()
+            app.group.create_group(group)
+            # загружаем список групп
+            new_groups = db.get_group_list()
+            # добавляем ту же группу в список old_groups
+            old_groups.append(group)
+&gt;           assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+E           assert [399:qwe;;, 4... )Q9 zxu, ...] == [399:qwe;;, 4... )Q9 zxu, ...]
+E             
+E             At index 18 diff: None:N***3&lt;S{L;H***]&amp; KmA?t(c{O9;F*** ^pXfBrBjm) d != 417:N***3;H***]&amp; KmA?t(c{O9;F*** ^pXfBrBjm) d
+E             
+E             Full diff:
+E               [
+E                   399:qwe;;,
+E                   400:;;,
+E                   401:N***EF);H***;F***&gt;7,
+E                   402:N*** c+OS*;H***f_&gt;eprg;F***,
+E                   403:N***:;H***;F***Q?XP %$?7&quot;Uto,
+E                   404:N***];H***Is&quot;MMB{zmf8;F***er$`?,.  )Q9 zxu,
+E                   405:N***3;H***]&amp; KmA?t(c{O9;F*** ^pXfBrBjm) d,
+E                   406:;;,
+E                   407:N***EF);H***;F***&gt;7,
+E                   408:N*** c+OS*;H***f_&gt;eprg;F***,
+E                   409:N***:;H***;F***Q?XP %$?7&quot;Uto,
+E                   410:N***];H***Is&quot;MMB{zmf8;F***er$`?,.  )Q9 zxu,
+E                   411:N***3;H***]&amp; KmA?t(c{O9;F*** ^pXfBrBjm) d,
+E                   412:;;,
+E                   413:N***EF);H***;F***&gt;7,
+E                   414:N*** c+OS*;H***f_&gt;eprg;F***,
+E                   415:N***:;H***;F***Q?XP %$?7&quot;Uto,
+E                   416:N***];H***Is&quot;MMB{zmf8;F***er$`?,.  )Q9 zxu,
+E             -     417:N***3;H***]&amp; KmA?t(c{O9;F*** ^pXfBrBjm) d,
+E             ?     ^^^
+E             +     None:N***3&lt;S{L;H***]&amp; KmA?t(c{O9;F*** ^pXfBrBjm) d,
+E             ?     ^^^^      ++++
+E               ]
+
+test\test_data_create.py:13: AssertionError</errorStackTrace>
+          <errorDetails>assert [399:qwe;;, 4... )Q9 zxu, ...] == [399:qwe;;, 4... )Q9 zxu, ...]
+  
+  At index 18 diff: None:N***3&lt;S{L;H***]&amp; KmA?t(c{O9;F*** ^pXfBrBjm) d != 417:N***3;H***]&amp; KmA?t(c{O9;F*** ^pXfBrBjm) d
+  
+  Full diff:
+    [
+        399:qwe;;,
+        400:;;,
+        401:N***EF);H***;F***&gt;7,
+        402:N*** c+OS*;H***f_&gt;eprg;F***,
+        403:N***:;H***;F***Q?XP %$?7&quot;Uto,
+        404:N***];H***Is&quot;MMB{zmf8;F***er$`?,.  )Q9 zxu,
+        405:N***3;H***]&amp; KmA?t(c{O9;F*** ^pXfBrBjm) d,
+        406:;;,
+        407:N***EF);H***;F***&gt;7,
+        408:N*** c+OS*;H***f_&gt;eprg;F***,
+        409:N***:;H***;F***Q?XP %$?7&quot;Uto,
+        410:N***];H***Is&quot;MMB{zmf8;F***er$`?,.  )Q9 zxu,
+        411:N***3;H***]&amp; KmA?t(c{O9;F*** ^pXfBrBjm) d,
+        412:;;,
+        413:N***EF);H***;F***&gt;7,
+        414:N*** c+OS*;H***f_&gt;eprg;F***,
+        415:N***:;H***;F***Q?XP %$?7&quot;Uto,
+        416:N***];H***Is&quot;MMB{zmf8;F***er$`?,.  )Q9 zxu,
+  -     417:N***3;H***]&amp; KmA?t(c{O9;F*** ^pXfBrBjm) d,
+  ?     ^^^
+  +     None:N***3&lt;S{L;H***]&amp; KmA?t(c{O9;F*** ^pXfBrBjm) d,
+  ?     ^^^^      ++++
+    ]</errorDetails>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>6</failedSince>
+        </case>
+        <case>
+          <duration>2.9</duration>
+          <startTime>1777273249733</startTime>
+          <className>test.test_data_create</className>
+          <testName>test_add_contact[None:;;None]</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>6.537</duration>
+          <startTime>1777273252633</startTime>
+          <className>test.test_data_create</className>
+          <testName>test_add_contact[None:FNt 4  If;LNSqP ;ADDRL  fS-(R@ B X]</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <errorStackTrace>app = &lt;fixture.application.Application object at 0x0000022FCF24D730&gt;
+db = &lt;fixture.db.DbFixture object at 0x0000022FCFBDBA60&gt;
+json_contacts = None:FNt 4  If;LNSqP ;ADDRL  fS-(R@ B X, check_ui = False
+
+    def test_add_contact(app, db, json_contacts, check_ui):
+            contact = json_contacts
+            old_contacts = db.get_contact_list()
+            app.contact.create_contact(contact)
+            new_contacts = db.get_contact_list()
+            old_contacts.append(contact)
+&gt;           assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
+E           assert [159:123;;, 1...DDR-o1Nc, ...] == [159:123;;, 1...DDR-o1Nc, ...]
+E             
+E             Left contains one more item: None:FNt 4  If;LNSqP ;ADDRL  fS-(R@ B X
+E             
+E             Full diff:
+E               [
+E                   159:123;;,
+E                   160:test-Fname;test-Lname;,
+E                   161:;;,
+E                   162:FNp; };LNE l;ADDR,
+E                   163:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+E                   164:FN=;LN7;ADDR-o1Nc,
+E                   165:;;,
+E                   166:FNp; };LNE l;ADDR,
+E                   167:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+E                   168:FN=;LN7;ADDR-o1Nc,
+E                   169:;;,
+E             +     None:FNt 4  If;LNSqP ;ADDRL  fS-(R@ B X,
+E               ]
+
+test\test_data_create.py:25: AssertionError</errorStackTrace>
+          <errorDetails>assert [159:123;;, 1...DDR-o1Nc, ...] == [159:123;;, 1...DDR-o1Nc, ...]
+  
+  Left contains one more item: None:FNt 4  If;LNSqP ;ADDRL  fS-(R@ B X
+  
+  Full diff:
+    [
+        159:123;;,
+        160:test-Fname;test-Lname;,
+        161:;;,
+        162:FNp; };LNE l;ADDR,
+        163:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+        164:FN=;LN7;ADDR-o1Nc,
+        165:;;,
+        166:FNp; };LNE l;ADDR,
+        167:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+        168:FN=;LN7;ADDR-o1Nc,
+        169:;;,
+  +     None:FNt 4  If;LNSqP ;ADDRL  fS-(R@ B X,
+    ]</errorDetails>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>6</failedSince>
+        </case>
+        <case>
+          <duration>6.401</duration>
+          <startTime>1777273259170</startTime>
+          <className>test.test_data_create</className>
+          <testName>test_add_contact[None:FN#O@ ;LN &quot;;ADDRDP&lt;arrEts&apos;]</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <errorStackTrace>app = &lt;fixture.application.Application object at 0x0000022FCF24D730&gt;
+db = &lt;fixture.db.DbFixture object at 0x0000022FCFBDBA60&gt;
+json_contacts = None:FN#O@ ;LN &quot;;ADDRDP&lt;arrEts&apos;, check_ui = False
+
+    def test_add_contact(app, db, json_contacts, check_ui):
+            contact = json_contacts
+            old_contacts = db.get_contact_list()
+            app.contact.create_contact(contact)
+            new_contacts = db.get_contact_list()
+            old_contacts.append(contact)
+&gt;           assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
+E           assert [159:123;;, 1...DDR-o1Nc, ...] == [159:123;;, 1...DDR-o1Nc, ...]
+E             
+E             Left contains one more item: None:FN#O@ ;LN &quot;;ADDRDP&lt;arrEts&apos;
+E             
+E             Full diff:
+E               [
+E                   159:123;;,
+E                   160:test-Fname;test-Lname;,
+E                   161:;;,
+E                   162:FNp; };LNE l;ADDR,
+E                   163:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+E                   164:FN=;LN7;ADDR-o1Nc,
+E                   165:;;,
+E                   166:FNp; };LNE l;ADDR,
+E                   167:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+E                   168:FN=;LN7;ADDR-o1Nc,
+E                   169:;;,
+E             +     None:FN#O@ ;LN &quot;;ADDRDP&lt;arrEts&apos;,
+E               ]
+
+test\test_data_create.py:25: AssertionError</errorStackTrace>
+          <errorDetails>assert [159:123;;, 1...DDR-o1Nc, ...] == [159:123;;, 1...DDR-o1Nc, ...]
+  
+  Left contains one more item: None:FN#O@ ;LN &quot;;ADDRDP&lt;arrEts&apos;
+  
+  Full diff:
+    [
+        159:123;;,
+        160:test-Fname;test-Lname;,
+        161:;;,
+        162:FNp; };LNE l;ADDR,
+        163:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+        164:FN=;LN7;ADDR-o1Nc,
+        165:;;,
+        166:FNp; };LNE l;ADDR,
+        167:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+        168:FN=;LN7;ADDR-o1Nc,
+        169:;;,
+  +     None:FN#O@ ;LN &quot;;ADDRDP&lt;arrEts&apos;,
+    ]</errorDetails>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>6</failedSince>
+        </case>
+        <case>
+          <duration>6.528</duration>
+          <startTime>1777273265571</startTime>
+          <className>test.test_data_create</className>
+          <testName>test_add_contact[None:FNp; };LNE l;ADDR]</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>6.644</duration>
+          <startTime>1777273272099</startTime>
+          <className>test.test_data_create</className>
+          <testName>test_add_contact[None:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq]</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>6.402</duration>
+          <startTime>1777273278743</startTime>
+          <className>test.test_data_create</className>
+          <testName>test_add_contact[None:FN=;LN7;ADDR-o1Nc]</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>1.241</duration>
+          <startTime>1777273285145</startTime>
+          <className>test.test_data_modify</className>
+          <testName>test_modify_random_group_name</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>2.296</duration>
+          <startTime>1777273286386</startTime>
+          <className>test.test_data_modify</className>
+          <testName>test_modify_random_contact_name</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.891</duration>
+          <startTime>1777273288682</startTime>
+          <className>test.test_data_removal</className>
+          <testName>test_delete_random_group</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.839</duration>
+          <startTime>1777273289573</startTime>
+          <className>test.test_data_removal</className>
+          <testName>test_delete_random_contact</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.532</duration>
+          <startTime>1777273290412</startTime>
+          <className>test.test_db_matches_ui</className>
+          <testName>test_group_list</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>3.619</duration>
+          <startTime>1777273290944</startTime>
+          <className>test.test_home_page_asserts</className>
+          <testName>test_assert_all_credentials_on_home_page</testName>
+          <skipped>false</skipped>
+          <keepTestNames>false</keepTestNames>
+          <errorStackTrace>app = &lt;fixture.application.Application object at 0x0000022FCF24D730&gt;
+db = &lt;fixture.db.DbFixture object at 0x0000022FCFBDBA60&gt;
+
+    def test_assert_all_credentials_on_home_page(app, db):
+        contacts_from_home_page = app.contact.get_contact_list()
+        contacts_from_db = db.get_contact_list()
+        contacts_from_home_page_sorted = sorted(contacts_from_home_page, key=Contact.id_or_max)
+        contacts_from_db_sorted = sorted(contacts_from_db, key=Contact.id_or_max)
+        for i in range(len(contacts_from_home_page_sorted)):
+            contact_from_home_page = contacts_from_home_page_sorted[i]
+            contact_from_db = contacts_from_db_sorted[i]
+            assert contact_from_home_page.firstname == contact_from_db.firstname
+&gt;           assert contact_from_home_page.lastname == contact_from_db.lastname
+E           AssertionError: assert &apos;LN m wrN(k&apos; == &apos;LN  m wrN(k&apos;
+E             
+E             - LN  m wrN(k
+E             ?    -
+E             + LN m wrN(k
+
+test\test_home_page_asserts.py:14: AssertionError</errorStackTrace>
+          <errorDetails>AssertionError: assert &apos;LN m wrN(k&apos; == &apos;LN  m wrN(k&apos;
+  
+  - LN  m wrN(k
+  ?    -
+  + LN m wrN(k</errorDetails>
+          <properties/>
+          <flakyFailures/>
+          <rerunFailures/>
+          <failedSince>8</failedSince>
+        </case>
+      </cases>
+    </suite>
+  </suites>
+  <duration>60.743</duration>
+  <skipOldReports>false</skipOldReports>
+  <startTime>1777273234175</startTime>
+  <stdioRetention>NONE</stdioRetention>
+  <keepTestNames>false</keepTestNames>
+  <keepProperties>false</keepProperties>
+</result>

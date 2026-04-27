@@ -1,0 +1,292 @@
+Started by user [8mha:////4F4U6++BqM9gcrFvIpVblyIVfR0oJ418IjUSS3d0fxVYAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace C:\Users\timoshenko.SP\.jenkins\workspace\addressbook tests
+The recommended git tool is: NONE
+No credentials specified
+ > C:\Program Files\Git\bin\git.exe rev-parse --resolve-git-dir C:\Users\timoshenko.SP\.jenkins\workspace\addressbook tests\.git # timeout=10
+Fetching changes from the remote Git repository
+ > C:\Program Files\Git\bin\git.exe config remote.origin.url https://github.com/pashqansk/python_training_2026 # timeout=10
+Fetching upstream changes from https://github.com/pashqansk/python_training_2026
+ > C:\Program Files\Git\bin\git.exe --version # timeout=10
+ > git --version # 'git version 2.53.0.windows.1'
+ > C:\Program Files\Git\bin\git.exe fetch --tags --force --progress -- https://github.com/pashqansk/python_training_2026 +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Program Files\Git\bin\git.exe rev-parse "refs/remotes/origin/main^{commit}" # timeout=10
+Checking out Revision edcb06383acc1a9c72bb33ae5ffca3e8f8fd0a0c (refs/remotes/origin/main)
+ > C:\Program Files\Git\bin\git.exe config core.sparsecheckout # timeout=10
+ > C:\Program Files\Git\bin\git.exe checkout -f edcb06383acc1a9c72bb33ae5ffca3e8f8fd0a0c # timeout=10
+Commit message: "Переделал тесты добавления и удаления контакта в группу, добавил предусловия и доп. проверки согласно требованию лектора."
+ > C:\Program Files\Git\bin\git.exe rev-list --no-walk edcb06383acc1a9c72bb33ae5ffca3e8f8fd0a0c # timeout=10
+[addressbook tests] $ cmd.exe /c call C:\Users\TIMOSH~1.SP\AppData\Local\Temp\shiningpanda15097828901980214629.bat
+
+[m[32m]9;8;"USERNAME"\@]9;8;"COMPUTERNAME"\ [92mC:\Users\timoshenko.SP\.jenkins\workspace\addressbook tests[90m
+[90m#[m ]9;12\pip install -r requirements.txt 
+Requirement already satisfied: pytest in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 1)) (8.4.2)
+Requirement already satisfied: selenium==3.141.0 in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 2)) (3.141.0)
+Requirement already satisfied: urllib3==1.26.16 in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 3)) (1.26.16)
+Requirement already satisfied: jsonpickle in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 4)) (4.1.1)
+Requirement already satisfied: pony in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 5)) (0.7.19)
+Requirement already satisfied: pymysql in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 6)) (1.1.2)
+Requirement already satisfied: mysql-connector-python-rf in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from -r requirements.txt (line 7)) (2.2.2)
+Requirement already satisfied: colorama>=0.4 in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (0.4.6)
+Requirement already satisfied: exceptiongroup>=1 in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (1.3.1)
+Requirement already satisfied: iniconfig>=1 in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (2.1.0)
+Requirement already satisfied: packaging>=20 in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (26.2)
+Requirement already satisfied: pluggy<2,>=1.5 in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (1.6.0)
+Requirement already satisfied: pygments>=2.7.2 in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (2.20.0)
+Requirement already satisfied: tomli>=1 in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from pytest->-r requirements.txt (line 1)) (2.4.1)
+Requirement already satisfied: typing-extensions>=4.6.0 in c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages (from exceptiongroup>=1->pytest->-r requirements.txt (line 1)) (4.15.0)
+
+[m[32m]9;8;"USERNAME"\@]9;8;"COMPUTERNAME"\ [92mC:\Users\timoshenko.SP\.jenkins\workspace\addressbook tests[90m
+[90m#[m ]9;12\py.test --junitxml=results.xml test 
+============================= test session starts =============================
+platform win32 -- Python 3.9.13, pytest-8.4.2, pluggy-1.6.0
+rootdir: C:\Users\timoshenko.SP\.jenkins\workspace\addressbook tests
+collected 20 items
+
+test\test_contact_in_group.py ..                                         [ 10%]
+test\test_data_create.py .....F.FF...                                    [ 70%]
+test\test_data_modify.py ..                                              [ 80%]
+test\test_data_removal.py ..                                             [ 90%]
+test\test_db_matches_ui.py .                                             [ 95%]
+test\test_home_page_asserts.py F                                         [100%]
+
+================================== FAILURES ===================================
+_____ test_add_group[None:N***3<S{L;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d] ______
+
+app = <fixture.application.Application object at 0x0000022FCF24D730>
+db = <fixture.db.DbFixture object at 0x0000022FCFBDBA60>
+json_groups = None:N***3<S{L;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d
+check_ui = False
+
+    def test_add_group(app, db, json_groups, check_ui):
+            group = json_groups
+            old_groups = db.get_group_list()
+            app.group.create_group(group)
+            # ��������� ������ �����
+            new_groups = db.get_group_list()
+            # ��������� �� �� ������ � ������ old_groups
+            old_groups.append(group)
+>           assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+E           assert [399:qwe;;, 4... )Q9 zxu, ...] == [399:qwe;;, 4... )Q9 zxu, ...]
+E             
+E             At index 18 diff: None:N***3<S{L;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d != 417:N***3;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d
+E             
+E             Full diff:
+E               [
+E                   399:qwe;;,
+E                   400:;;,
+E                   401:N***EF);H***;F***>7,
+E                   402:N*** c+OS*;H***f_>eprg;F***,
+E                   403:N***:;H***;F***Q?XP %$?7"Uto,
+E                   404:N***];H***Is"MMB{zmf8;F***er$`?,.  )Q9 zxu,
+E                   405:N***3;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d,
+E                   406:;;,
+E                   407:N***EF);H***;F***>7,
+E                   408:N*** c+OS*;H***f_>eprg;F***,
+E                   409:N***:;H***;F***Q?XP %$?7"Uto,
+E                   410:N***];H***Is"MMB{zmf8;F***er$`?,.  )Q9 zxu,
+E                   411:N***3;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d,
+E                   412:;;,
+E                   413:N***EF);H***;F***>7,
+E                   414:N*** c+OS*;H***f_>eprg;F***,
+E                   415:N***:;H***;F***Q?XP %$?7"Uto,
+E                   416:N***];H***Is"MMB{zmf8;F***er$`?,.  )Q9 zxu,
+E             -     417:N***3;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d,
+E             ?     ^^^
+E             +     None:N***3<S{L;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d,
+E             ?     ^^^^      ++++
+E               ]
+
+test\test_data_create.py:13: AssertionError
+__________ test_add_contact[None:FNt 4  If;LNSqP ;ADDRL  fS-(R@ B X] __________
+
+app = <fixture.application.Application object at 0x0000022FCF24D730>
+db = <fixture.db.DbFixture object at 0x0000022FCFBDBA60>
+json_contacts = None:FNt 4  If;LNSqP ;ADDRL  fS-(R@ B X, check_ui = False
+
+    def test_add_contact(app, db, json_contacts, check_ui):
+            contact = json_contacts
+            old_contacts = db.get_contact_list()
+            app.contact.create_contact(contact)
+            new_contacts = db.get_contact_list()
+            old_contacts.append(contact)
+>           assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
+E           assert [159:123;;, 1...DDR-o1Nc, ...] == [159:123;;, 1...DDR-o1Nc, ...]
+E             
+E             Left contains one more item: None:FNt 4  If;LNSqP ;ADDRL  fS-(R@ B X
+E             
+E             Full diff:
+E               [
+E                   159:123;;,
+E                   160:test-Fname;test-Lname;,
+E                   161:;;,
+E                   162:FNp; };LNE l;ADDR,
+E                   163:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+E                   164:FN=;LN7;ADDR-o1Nc,
+E                   165:;;,
+E                   166:FNp; };LNE l;ADDR,
+E                   167:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+E                   168:FN=;LN7;ADDR-o1Nc,
+E                   169:;;,
+E             +     None:FNt 4  If;LNSqP ;ADDRL  fS-(R@ B X,
+E               ]
+
+test\test_data_create.py:25: AssertionError
+______________ test_add_contact[None:FN#O@ ;LN ";ADDRDP<arrEts'] ______________
+
+app = <fixture.application.Application object at 0x0000022FCF24D730>
+db = <fixture.db.DbFixture object at 0x0000022FCFBDBA60>
+json_contacts = None:FN#O@ ;LN ";ADDRDP<arrEts', check_ui = False
+
+    def test_add_contact(app, db, json_contacts, check_ui):
+            contact = json_contacts
+            old_contacts = db.get_contact_list()
+            app.contact.create_contact(contact)
+            new_contacts = db.get_contact_list()
+            old_contacts.append(contact)
+>           assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
+E           assert [159:123;;, 1...DDR-o1Nc, ...] == [159:123;;, 1...DDR-o1Nc, ...]
+E             
+E             Left contains one more item: None:FN#O@ ;LN ";ADDRDP<arrEts'
+E             
+E             Full diff:
+E               [
+E                   159:123;;,
+E                   160:test-Fname;test-Lname;,
+E                   161:;;,
+E                   162:FNp; };LNE l;ADDR,
+E                   163:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+E                   164:FN=;LN7;ADDR-o1Nc,
+E                   165:;;,
+E                   166:FNp; };LNE l;ADDR,
+E                   167:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+E                   168:FN=;LN7;ADDR-o1Nc,
+E                   169:;;,
+E             +     None:FN#O@ ;LN ";ADDRDP<arrEts',
+E               ]
+
+test\test_data_create.py:25: AssertionError
+__________________ test_assert_all_credentials_on_home_page ___________________
+
+app = <fixture.application.Application object at 0x0000022FCF24D730>
+db = <fixture.db.DbFixture object at 0x0000022FCFBDBA60>
+
+    def test_assert_all_credentials_on_home_page(app, db):
+        contacts_from_home_page = app.contact.get_contact_list()
+        contacts_from_db = db.get_contact_list()
+        contacts_from_home_page_sorted = sorted(contacts_from_home_page, key=Contact.id_or_max)
+        contacts_from_db_sorted = sorted(contacts_from_db, key=Contact.id_or_max)
+        for i in range(len(contacts_from_home_page_sorted)):
+            contact_from_home_page = contacts_from_home_page_sorted[i]
+            contact_from_db = contacts_from_db_sorted[i]
+            assert contact_from_home_page.firstname == contact_from_db.firstname
+>           assert contact_from_home_page.lastname == contact_from_db.lastname
+E           AssertionError: assert 'LN m wrN(k' == 'LN  m wrN(k'
+E             
+E             - LN  m wrN(k
+E             ?    -
+E             + LN m wrN(k
+
+test\test_home_page_asserts.py:14: AssertionError
+============================== warnings summary ===============================
+test/test_contact_in_group.py: 48 warnings
+test/test_data_create.py: 950 warnings
+test/test_data_modify.py: 75 warnings
+test/test_data_removal.py: 28 warnings
+test/test_db_matches_ui.py: 62 warnings
+test/test_home_page_asserts.py: 116 warnings
+  c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages\selenium\webdriver\remote\remote_connection.py:418: DeprecationWarning: HTTPResponse.getheader() is deprecated and will be removed in urllib3 v2.1.0. Instead use HTTPResponse.headers.get(name, default).
+    if resp.getheader('Content-Type') is not None:
+
+test/test_contact_in_group.py: 48 warnings
+test/test_data_create.py: 950 warnings
+test/test_data_modify.py: 75 warnings
+test/test_data_removal.py: 28 warnings
+test/test_db_matches_ui.py: 62 warnings
+test/test_home_page_asserts.py: 116 warnings
+  c:\users\timoshenko.sp\.jenkins\shiningpanda\jobs\62ae2d4d\virtualenvs\d41d8cd9\lib\site-packages\selenium\webdriver\remote\remote_connection.py:419: DeprecationWarning: HTTPResponse.getheader() is deprecated and will be removed in urllib3 v2.1.0. Instead use HTTPResponse.headers.get(name, default).
+    content_type = resp.getheader('Content-Type').split(';')
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: C:\Users\timoshenko.SP\.jenkins\workspace\addressbook tests\results.xml -
+=========================== short test summary info ===========================
+FAILED test/test_data_create.py::test_add_group[None:N***3<S{L;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d] - assert [399:qwe;;, 4... )Q9 zxu, ...] == [399:qwe;;, 4... )Q9 zxu, ...]
+  
+  At index 18 diff: None:N***3<S{L;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d != 417:N***3;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d
+  
+  Full diff:
+    [
+        399:qwe;;,
+        400:;;,
+        401:N***EF);H***;F***>7,
+        402:N*** c+OS*;H***f_>eprg;F***,
+        403:N***:;H***;F***Q?XP %$?7"Uto,
+        404:N***];H***Is"MMB{zmf8;F***er$`?,.  )Q9 zxu,
+        405:N***3;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d,
+        406:;;,
+        407:N***EF);H***;F***>7,
+        408:N*** c+OS*;H***f_>eprg;F***,
+        409:N***:;H***;F***Q?XP %$?7"Uto,
+        410:N***];H***Is"MMB{zmf8;F***er$`?,.  )Q9 zxu,
+        411:N***3;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d,
+        412:;;,
+        413:N***EF);H***;F***>7,
+        414:N*** c+OS*;H***f_>eprg;F***,
+        415:N***:;H***;F***Q?XP %$?7"Uto,
+        416:N***];H***Is"MMB{zmf8;F***er$`?,.  )Q9 zxu,
+  -     417:N***3;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d,
+  ?     ^^^
+  +     None:N***3<S{L;H***]& KmA?t(c{O9;F*** ^pXfBrBjm) d,
+  ?     ^^^^      ++++
+    ]
+FAILED test/test_data_create.py::test_add_contact[None:FNt 4  If;LNSqP ;ADDRL  fS-(R@ B X] - assert [159:123;;, 1...DDR-o1Nc, ...] == [159:123;;, 1...DDR-o1Nc, ...]
+  
+  Left contains one more item: None:FNt 4  If;LNSqP ;ADDRL  fS-(R@ B X
+  
+  Full diff:
+    [
+        159:123;;,
+        160:test-Fname;test-Lname;,
+        161:;;,
+        162:FNp; };LNE l;ADDR,
+        163:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+        164:FN=;LN7;ADDR-o1Nc,
+        165:;;,
+        166:FNp; };LNE l;ADDR,
+        167:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+        168:FN=;LN7;ADDR-o1Nc,
+        169:;;,
+  +     None:FNt 4  If;LNSqP ;ADDRL  fS-(R@ B X,
+    ]
+FAILED test/test_data_create.py::test_add_contact[None:FN#O@ ;LN ";ADDRDP<arrEts'] - assert [159:123;;, 1...DDR-o1Nc, ...] == [159:123;;, 1...DDR-o1Nc, ...]
+  
+  Left contains one more item: None:FN#O@ ;LN ";ADDRDP<arrEts'
+  
+  Full diff:
+    [
+        159:123;;,
+        160:test-Fname;test-Lname;,
+        161:;;,
+        162:FNp; };LNE l;ADDR,
+        163:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+        164:FN=;LN7;ADDR-o1Nc,
+        165:;;,
+        166:FNp; };LNE l;ADDR,
+        167:FN!v;LN  m wrN(k;ADDR0?s `kYtPrcq,
+        168:FN=;LN7;ADDR-o1Nc,
+        169:;;,
+  +     None:FN#O@ ;LN ";ADDRDP<arrEts',
+    ]
+FAILED test/test_home_page_asserts.py::test_assert_all_credentials_on_home_page - AssertionError: assert 'LN m wrN(k' == 'LN  m wrN(k'
+  
+  - LN  m wrN(k
+  ?    -
+  + LN m wrN(k
+=========== 4 failed, 16 passed, 2558 warnings in 60.74s (0:01:00) ============
+
+[m[32m]9;8;"USERNAME"\@]9;8;"COMPUTERNAME"\ [92mC:\Users\timoshenko.SP\.jenkins\workspace\addressbook tests[90m
+[90m#[m ]9;12\exit 1 
+Build step 'Virtualenv Builder' marked build as failure
+Recording test results
+[Checks API] No suitable checks publisher found.
+Finished: FAILURE
